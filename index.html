@@ -259,7 +259,7 @@ footer{padding:28px max(5vw,18px);text-align:center;color:var(--soft);font-size:
       <a class="btn main" id="mailbtn" href="#contact">Email me</a>
       <a class="btn" href="https://www.linkedin.com/in/taniahew">Message on LinkedIn</a>
     </div>
-    <p class="mail" id="mailtext"></p>
+    <p class="mail"><a id="mailtext" href="#contact"></a></p>
   </div>
 </section>
 
@@ -282,7 +282,7 @@ const m=['contact','taniahew.com'].join('@');
 const TAG='[taniahew.com enquiry]';
 const mb=document.getElementById('mailbtn');
 mb.href='mailto:'+m+'?subject='+encodeURIComponent(TAG+' Role or project')+'&body='+encodeURIComponent('Hi Tania,\n\nName:\nCompany:\nFull-time role or contract:\nA few lines about it:\n\n');
-document.getElementById('mailtext').textContent=m;
+const mt=document.getElementById('mailtext');mt.textContent=m;mt.href=mb.href;
 for(const e of document.querySelectorAll('.tagtxt'))e.textContent=TAG;
 document.getElementById('yr').textContent=new Date().getFullYear();
 
